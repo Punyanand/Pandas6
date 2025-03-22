@@ -1,0 +1,18 @@
+import pandas as pd
+#python solution
+#sort and drop duplicates
+
+def delete_duplicate_emails(person: pd.DataFrame) -> None:
+    # dict = {}
+    # for i in range(len(person)):
+    #     id = person['id'][i]
+    #     email = person['email'][i]
+    #     if email in dict:
+    #         if id <dict[email]:
+    #             dict[email]=id
+    #         else:
+    #             dict[email]=id
+    #pandas solution
+    person.sort_values(by='id', inplace=True)
+    person.drop_duplicates(subset='email', keep='first', inplace=True)
+    
